@@ -6,6 +6,7 @@
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+from util.crawl_ip import GetIP
 
 
 class ArticlespiderSpiderMiddleware(object):
@@ -101,3 +102,10 @@ class ArticlespiderDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class RandomProxyMiddleware(object):
+
+    def process_request(self, request, spider):
+        get_ip = GetIP()
+        request.meta['proxy'] = get_ip.get_random_ip()

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 
 # Scrapy settings for articleSpider project
 #
@@ -72,7 +73,7 @@ ITEM_PIPELINES = {
   # 'scrapy.pipelines.images.ImagesPipeline': 1,
    # 'articleSpider.pipelines.ArticleImagePipline': 1
    #  'articleSpider.pipelines.MysqlPipline': 1,
-    'articleSpider.pipelines.MysqlTwistedPipline': 1
+    #'articleSpider.pipelines.MysqlTwistedPipline': 1
 }
 IMAGES_URLS_FIELD = 'front_image_url'
 project_dir = os.path.abspath(os.path.dirname(__file__))
